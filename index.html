@@ -14,7 +14,7 @@
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
-        .message {
+        #message {
             font-size: 20vw; /* Responsive font size */
             font-weight: bold;
             color: #333;
@@ -23,6 +23,12 @@
     </style>
 </head>
 <body>
-    <div class="message">YES</div>
+    <div id="message"></div>
+    <script>
+        const m = document.querySelector('#message');
+        if (m.textContent === '') {
+            m.textContent = [0, 6].includes(new Date().getDay()) ? 'NO' : 'YES';
+        }
+    </script>
 </body>
 </html> 
